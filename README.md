@@ -17,4 +17,7 @@ https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-proje
 
 https://usehooks.com/useEventListener/
 
+Development Kit Sounds from: https://www.youtube.com/channel/UCf9rcjI6BJOWWNelpWEXIxg
+
+Production Kit Sounds from: https://drumbit.app/
 
