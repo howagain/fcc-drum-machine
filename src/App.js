@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.scss';
+import DrumPad from "./Components/DrumPad/DrumPad.component"
+import kit from "./soundkeymapping"
+const kitKeys = Object.keys(kit)
 
 function App() {
+  const [textDisplay, setTextDisplay] = useState('')
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Drum Machine</h1>
+      <h2 id="display">Now Playing: {textDisplay}</h2>
+      <div className="dm-container">
+        <div id="drum-machine">
+          {kitKeys.map((key) => {
+            return (<DrumPad key={key} buttonID={key.toUpperCase()} passedSound={kit[key].sound} title={kit[key].title} setTextDisplay={setTextDisplay} />)
+          })}
+        </div>
+      </div>
     </div>
   );
 }
